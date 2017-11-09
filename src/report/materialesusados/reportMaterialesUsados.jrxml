@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteMaterialesUsados" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e6d882c1-1bb9-4c98-89d7-560e6ee468fa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codestudio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     materiales.`nombre`,
+     estudio.`nombre` AS estudio_nombre
+FROM
+     `utiliza` utiliza INNER JOIN `materiales` materiales ON utiliza.`codMaterial` = materiales.`codigo`
+     INNER JOIN `estudio` estudio ON utiliza.`codEstudio` = estudio.`codigo`
+WHERE
+     `codEstudio` = $P{codestudio}]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estudio_nombre" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="148">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="148" backcolor="#006699" uuid="81d5f971-f21e-4790-9139-b28b4a083cb6"/>
+				<staticText>
+					<reportElement x="407" y="20" width="79" height="14" forecolor="#FFFFFF" uuid="a98da5d4-78ee-4094-b127-db671781869d"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Famisalud C.A]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="19" y="68" width="264" height="20" forecolor="#FFFFFF" uuid="0dfc91a4-db8d-436e-acb3-6e376750949e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<text><![CDATA[FLOR AMARILLO C.A]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="19" y="48" width="264" height="20" forecolor="#FFFFFF" uuid="26e8d6ef-cf59-4f18-a816-f7af3fc2dfd4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[INTEGRAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="19" y="101" width="292" height="20" forecolor="#FFFFFF" uuid="877263c0-dd30-4f31-acb0-897a6654bc14"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Materiales usados por el estudio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="18" y="20" width="265" height="28" forecolor="#FFFFFF" uuid="77821863-42a3-47f0-9cc2-9f62d274fb36"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CENTRO RADIODIAGNÓSTICO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="407" y="48" width="129" height="14" forecolor="#FFFFFF" uuid="6cbf115c-4efe-4705-9ebb-ea3c6202243b"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[valencia Edo. Carabobo]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="64">
+			<staticText>
+				<reportElement x="0" y="24" width="80" height="20" uuid="8177bce3-ec7a-4f28-bb56-078d6d2ed1f9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Estudio:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="80" y="24" width="277" height="20" uuid="5c416042-1886-4341-a35a-5218daddc33a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudio_nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26">
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" forecolor="#666666" uuid="e926e84f-bea6-4694-91ec-99d24cee97b2"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="19" forecolor="#006699" backcolor="#E6E6E6" uuid="51ee9927-9c0f-4996-b2e9-970b56e11108"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Materiales]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="9e44db38-f42a-4542-81e1-55fae73b7911"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="0" width="277" height="20" uuid="b32a72c9-697c-45f7-b68e-86f9184047bf"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="d8dfaffb-fffe-4598-9c7b-0c528404cd8b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="9532c564-1141-4d06-ba4e-3ec1ab0af938"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="d5688528-de19-4fd6-ac9b-2063e9f60039"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

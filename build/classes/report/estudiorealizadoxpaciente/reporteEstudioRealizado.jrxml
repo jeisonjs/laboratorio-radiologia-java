@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteEstudioRealizado" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bda7dc2c-da68-4ad5-a573-0e028a6ef3a9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="cedula" class="java.lang.String"/>
+	<parameter name="edad" class="java.lang.String"/>
+	<parameter name="estudio" class="java.lang.String"/>
+	<parameter name="precio" class="java.lang.String"/>
+	<parameter name="codigo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<group name="fr">
+		<groupFooter>
+			<band height="50">
+				<textField>
+					<reportElement x="145" y="0" width="285" height="20" uuid="1a7fd189-46ca-4922-89a1-c88d31497fbd"/>
+					<textFieldExpression><![CDATA[$P{estudio}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="-1" y="-1" width="146" height="20" uuid="d1b2086a-8b4b-406f-95b3-dda092a78ccf"/>
+					<textFieldExpression><![CDATA[$P{codigo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="430" y="0" width="125" height="20" uuid="3585855a-631c-4eef-b0e8-e4a7d0c85e46"/>
+					<textFieldExpression><![CDATA[$P{precio}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="140">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="556" height="140" backcolor="#006699" uuid="1173ff5a-82a6-4914-a59e-4319ed210e88"/>
+				<staticText>
+					<reportElement x="14" y="94" width="292" height="20" forecolor="#FFFFFF" uuid="2926aad0-9893-4857-ae30-1e201b29010a"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Comprobante de estudio realizado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="13" y="13" width="265" height="28" forecolor="#FFFFFF" uuid="6e27a855-d07c-46ba-be21-61b60d67f319"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CENTRO RADIODIAGNÓSTICO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="14" y="61" width="264" height="20" forecolor="#FFFFFF" uuid="7c70c4d5-e7cb-44e0-a8ff-2d538b64ad89"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<text><![CDATA[FLOR AMARILLO C.A]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="14" y="41" width="264" height="20" forecolor="#FFFFFF" uuid="1e8a61bd-36ee-48e8-a838-93ededfe96f8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[INTEGRAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="402" y="41" width="129" height="14" forecolor="#FFFFFF" uuid="cf8faaf0-3962-4936-af1e-19f9f44d6d71"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[valencia Edo. Carabobo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="402" y="13" width="79" height="14" forecolor="#FFFFFF" uuid="285cc3f7-7132-4b62-b898-86953975fd3f"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Famisalud C.A]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="85">
+			<textField>
+				<reportElement x="-1" y="9" width="100" height="20" uuid="b9d048d8-1298-4e7f-afc4-bfa74be197e3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Paciente: " + $P{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="9" width="100" height="20" uuid="08222f1d-ea3d-4f1f-a8e0-fbbab3f99c21"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Fecha: " + $P{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="34" width="100" height="20" uuid="746b2dee-127f-4206-a758-613fc780187f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Cedula: " + $P{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="59" width="100" height="20" uuid="e248a39b-61d1-4315-9492-ac02b9e50edb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Edad: " + $P{edad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="145" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f533fbb8-705c-47bb-a94d-7d0254e00891"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="145" y="0" width="285" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d6df9ee8-4648-4621-ae84-a860c9319fd8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estudio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="430" y="0" width="125" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e5aeee04-beb1-4a3b-a205-e3d6f33912d8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="e63802d0-3289-4eb1-a673-b8fdd5877afb"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="be702414-16a2-4f7a-96cc-77da2e9c6fd3"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="0b03ace7-e02b-454d-adbb-271a192dcc1c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
